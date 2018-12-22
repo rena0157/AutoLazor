@@ -14,4 +14,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.7.0" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Watch Include="**\*.cshtml"/>
+  </ItemGroup>
+
+
 </Project>

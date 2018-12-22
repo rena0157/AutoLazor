@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/AutoLazer.Server/bin/Debug/netcoreapp2.1/AutoLazer.Server.dll",
+            "program": "${workspaceFolder}/src/AutoLazer.Server/bin/Debug/netcoreapp2.1/AutoLazer.Server.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/AutoLazer.Server",
+            "cwd": "${workspaceFolder}/src/AutoLazer.Server/",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

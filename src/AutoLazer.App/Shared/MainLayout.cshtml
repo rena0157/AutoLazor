@@ -1,15 +1,13 @@
 ﻿@inherits BlazorLayoutComponent
 
-<div class="sidebar">
-    <NavMenu />
-</div>
-
-<div class="main">
-    <div class="top-row px-4">
-        <a href="https://blazor.net" target="_blank" class="ml-md-auto">About</a>
+<div class="main-layout-container">
+    <div style="grid-area: navbar">
+        <Navbar></Navbar>
     </div>
 
-    <div class="content px-4">
+    <div style="grid-area: body">
         @Body
     </div>
 </div>
+
+

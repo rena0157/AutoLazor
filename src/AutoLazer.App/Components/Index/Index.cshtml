@@ -1,0 +1,20 @@
+﻿@page "/"
+@inherits IndexComponent
+
+<div class="index-container">
+    <div style="grid-area: message">
+        <h3>AutoLazer</h3>
+        <p>AutoLazer is the AutoList tools built in a completely new framework called <b>Blazor</b></p>
+    </div>
+
+    <!-- Main text input area -->
+    <textarea class="autolist-textarea" 
+        id="input-area" placeholder="Enter text here..." 
+        style="grid-area: input" onkeyup="@InputAreaOnKeyUp"></textarea>
+
+    <!-- Length output area -->
+    <textarea class="autolist-textarea" id="length-output" placeholder="Total Length" style="grid-area: length-output"></textarea>
+
+    <!-- Area output area -->
+    <textarea class="autolist-textarea" id="area-output" placeholder="Total Area" style="grid-area: area-output"></textarea>
+</div>

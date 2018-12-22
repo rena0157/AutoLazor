@@ -3,11 +3,10 @@
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet",
+            "command": "powershell",
             "type": "process",
             "args": [
-                "build",
-                "${workspaceFolder}/AutoLazer.Server/AutoLazer.Server.csproj"
+                "${workspaceFolder}/build.ps1"
             ],
             "problemMatcher": "$msCompile"
         }
