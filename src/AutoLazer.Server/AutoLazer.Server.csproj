@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AutoLazer.App\AutoLazer.App.csproj" />
+    <ProjectReference Include="..\AutoLazer.Core\AutoLazer.Core.csproj" />
   </ItemGroup>
 
 </Project>

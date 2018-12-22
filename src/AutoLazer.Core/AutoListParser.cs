@@ -11,12 +11,9 @@ namespace AutoLazer.Core
         /// </summary>
         /// <param name="pattern"></param>
         /// <returns></returns>
-        public List<T> GetObjects<T>(string inputText, string pattern)
+        public static List<T> GetObjects<T>(string inputText, string pattern)
         {
-        }
-
-        public Thr()
-        {
+            return new List<T>();
         }
     }
 }

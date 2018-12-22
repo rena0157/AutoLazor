@@ -2,12 +2,12 @@ using System;
 
 namespace AutoLazer.Core
 {
-    enum AutoListPatterns
+    public class AutoListPatterns
     {
-        LinesLengthPattern = @"[L,l]ength\s+=?\s*(?<double>\d+\.?\d*)",
+        public static readonly string LinesLengthPattern = @"[L,l]ength\s+=?\s*(?<double>\d+\.?\d*)";
 
-        HatchAreaPattern = @"[A,a]rea\s*(?<double>\d+\.?\d*)",
+        public static readonly string HatchAreaPattern = @"[A,a]rea\s*(?<double>\d+\.?\d*)";
 
-        TextPattern = @"(text|Contents:)\s*(?<string>.*)",
+        public static readonly string TextPattern = @"(text|Contents:)\s*(?<string>.*)";
     }
 }
