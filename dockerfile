@@ -1,10 +1,6 @@
 FROM microsoft/dotnet:2.1-sdk
 WORKDIR /app
 
-COPY ./src ./
-
-RUN dotnet restore
-
 COPY ./ ./
 
 RUN dotnet publish -c Release -o out
