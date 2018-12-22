@@ -34,7 +34,7 @@ namespace AutoLazer.Core
             var lengths = GetObjects<double>(inputText, AutoListPatterns.LinesLengthPattern);
             var areas = GetObjects<double>(inputText, AutoListPatterns.HatchAreaPattern);
 
-            const string orderValidationPattern = @"(LINE|LWPOLYLINE|HATCH|TEXT|MTEXT)";
+            const string orderValidationPattern = @"(LINE|LWPOLYLINE|HATCH|TEXT|MTEXT|ARC)";
             var matches = Regex.Matches(inputText, orderValidationPattern);
 
             var textIndex = 0;
@@ -58,7 +58,7 @@ namespace AutoLazer.Core
                 }
 
                 // Add length of a line and polyline to the total length
-                if ( currentMatch.Value == "LWPOLYLINE" || currentMatch.Value == "LINE" )
+                if ( currentMatch.Value == "LWPOLYLINE" || currentMatch.Value == "LINE" ||currentMatch.Value == "ARC")
                 {
                     currentLength += lengths[lineIndex++];
                     continue;
