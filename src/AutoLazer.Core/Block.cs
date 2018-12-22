@@ -33,5 +33,14 @@ namespace AutoLazer.Core
         /// The Area of the block
         /// </summary>
         public double Area {get;}
+
+        public override bool Equals(object obj)
+        {
+            if ((obj == null) || this.GetType().Equals(obj.GetType()))
+                return false;
+                
+            Block block = (Block) obj;
+            return (block.Id == this.Id) && (block.Frontage == this.Frontage) && (block.Area == this.Area);
+        }
     }
 }
