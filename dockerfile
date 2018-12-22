@@ -5,7 +5,7 @@ COPY ./src ./
 
 RUN dotnet restore
 
-COPY ./src/ ./
+COPY ./ ./
 
 RUN dotnet publish -c Release -o out
 
