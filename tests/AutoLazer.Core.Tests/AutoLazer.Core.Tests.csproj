@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\src\AutoLazer.Core\AutoLazer.Core.csproj" />
   </ItemGroup>
 
+<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+  <None Update="./TestFiles/*.txt" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+
 </Project>
