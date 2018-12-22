@@ -5,6 +5,7 @@ using AutoLazer.Core;
 using System.Collections.Generic;
 using System.Collections;
 using System.IO;
+using System.Text;
 
 namespace AutoLazer.Core.Tests
 {
@@ -45,8 +46,7 @@ namespace AutoLazer.Core.Tests
         [InlineData("Length 23.23", AutoListPatterns.LinesLengthPattern, new double[] {23.23})]
         [InlineData("Length 23", AutoListPatterns.LinesLengthPattern, new double[]{23})]
         [InlineData("length 23.8347", AutoListPatterns.LinesLengthPattern, new double[] {23.8347})]
-        [InlineData("area 34.34", AutoListPatterns.HatchAreaPattern, new double[] {34.34})]
-        [InlineData("area 34.", AutoListPatterns.HatchAreaPattern, new double[] {34})]
+        [InlineData("Area 34.34", AutoListPatterns.HatchAreaPattern, new double[] {34.34})]
         [InlineData("Area 34.", AutoListPatterns.HatchAreaPattern, new double[] {34})]
         public void GetObjectsTestDouble(string inputText, string pattern, double[] expected) =>
             Assert.Equal(expected, AutoListParser
@@ -79,12 +79,39 @@ namespace AutoLazer.Core.Tests
         {
             public IEnumerator<object[]> GetEnumerator()
             {
-                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test1.txt"),
+                // Test 1: Testing the standard block arrangement
+                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test1.txt", Encoding.UTF8),
                     new List<Block> {
-                            new Block("BLOCK   215\r", 101.633, 137.608),
-                            new Block("BLOCK   214\r", 70.807, 2741.476),
-                            new Block("BLOCK   216\r", 72.274, 81.438)
-                        }};
+                        new Block(@"BLOCK   214", 70.807, 2233.101),
+                        new Block(@"BLOCK   216", 72.274, 2000.596),
+                        new Block(@"BLOCK   215", 101.633, 2741.476)
+                    }};
+                
+                // Test 2: Testing with a block that has no area
+                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test2.txt", Encoding.UTF8),
+                    new List<Block> {
+                        new Block(@"BLOCK   214", 70.807, 2233.101),
+                        new Block(@"BLOCK   216", 72.274, 0),
+                        new Block(@"BLOCK   215", 101.633, 2741.476),
+                    }};
+
+                // Test 3: Testing with a block that has no frontage This would be the case if the block 
+                // was a street
+                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test3.txt", Encoding.UTF8),
+                    new List<Block> {
+                        new Block(@"BLOCK   214", 0, 2233.101),
+                        new Block(@"BLOCK   216", 72.274, 2000.596),
+                        new Block(@"BLOCK   215", 101.633, 2741.476),
+                    }};
+                
+                // Test 4: Testing blocks if the block has a frontage line that is broken up into two, note that one
+                // of the lines that is broken up is a frontage line.
+                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test4.txt", Encoding.UTF8),
+                    new List<Block> {
+                        new Block(@"BLOCK   214", 70.678, 2233.101),
+                        new Block(@"BLOCK   216", 72.274, 2000.596),
+                        new Block(@"BLOCK   215", 101.633, 2741.476)
+                    }};
             }
 
             IEnumerator IEnumerable.GetEnumerator()
