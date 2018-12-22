@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1-runtime
+FROM microsoft/dotnet:2.1-sdk
 WORKDIR /app
 
 COPY /src/AutoLazer.Server/*.csproj ./
