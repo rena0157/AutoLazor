@@ -1,0 +1,142 @@
+LIST
+Select objects: 1 found
+
+Select objects: 1 found, 2 total
+
+Select objects: 1 found, 3 total
+
+Select objects: 1 found, 4 total
+
+Select objects: 1 found, 5 total
+
+Select objects: 1 found, 6 total
+
+Select objects: 1 found, 7 total
+
+Select objects: 1 found, 8 total
+
+Select objects: 1 found, 9 total
+
+Select objects:
+                  TEXT      Layer: "Block Numbers"
+                            Space: Model space
+                   Handle = 1eeaaf
+             Style = "Standard"
+        Annotative: No
+             Typeface = Century Gothic
+             start point, X=  -17.163  Y=   29.087  Z=    0.000
+            height     4.000
+              text BLOCK   215
+          rotation angle    351
+             width scale factor     1.000
+         obliquing angle      0
+        generation normal
+
+                  LWPOLYLINE  Layer: "Frontage"
+                            Space: Model space
+                   Handle = 1eb57d
+              Open
+    Constant width     0.000
+              area   137.608
+            length   101.633
+
+          at point  X=  -51.877  Y=   29.555  Z=    0.000
+             bulge     0.021
+            center  X=   98.137  Y=  646.073  Z=    0.000
+            radius   634.507
+       start angle       299
+         end angle       304
+          at point  X=    1.585  Y=   18.955  Z=    0.000
+             bulge     0.019
+            center  X=   95.517  Y=  620.799  Z=    0.000
+            radius   609.130
+       start angle       304
+         end angle       309
+          at point  X=   48.369  Y=   13.497  Z=    0.000
+
+                  HATCH     Layer: "Hatch (Executive Towns)"
+                            Space: Model space
+                   Handle = 1d4144
+                 Hatch pattern SOLID
+                 Not associative
+                 Area      2741.476
+                 Origin    X=    0.000  Y=    0.000  Z=    0.000
+
+                  TEXT      Layer: "Block Numbers"
+                            Space: Model space
+                   Handle = 1eeaae
+             Style = "Standard"
+        Annotative: No
+             Typeface = Century Gothic
+             start point, X=  -28.539  Y=   58.212  Z=    0.000
+            height     4.000
+              text BLOCK   214
+          rotation angle    349
+             width scale factor     1.000
+         obliquing angle      0
+        generation normal
+
+                  LWPOLYLINE  Layer: "Frontage"
+                            Space: Model space
+Press ENTER to continue:
+                   Handle = 1ee971
+              Open
+    Constant width     0.000
+              area   81.438
+            length   70.807
+
+          at point  X=  -50.294  Y=   74.319  Z=    0.000
+          at point  X=  -13.865  Y=   66.933  Z=    0.000
+             bulge     0.042
+            center  X=   21.660  Y=  262.875  Z=    0.000
+            radius   199.137
+       start angle       303
+         end angle       312
+          at point  X=   19.581  Y=   63.749  Z=    0.000
+
+                  HATCH     Layer: "Hatch (Executive Towns)"
+                            Space: Model space
+                   Handle = 1d414c
+                 Hatch pattern SOLID
+                 Not associative
+                 Area      2233.101
+                 Origin    X=    0.000  Y=    0.000  Z=    0.000
+
+                  TEXT      Layer: "Block Numbers"
+                            Space: Model space
+                   Handle = 1eeb06
+             Style = "Standard"
+        Annotative: No
+             Typeface = Century Gothic
+             start point, X=   41.023  Y=   50.442  Z=    0.000
+            height     4.000
+              text BLOCK   216
+          rotation angle    302
+             width scale factor     1.000
+         obliquing angle      0
+        generation normal
+
+                  LWPOLYLINE  Layer: "Frontage"
+                            Space: Model space
+                   Handle = 1e9513
+              Open
+    Constant width     0.000
+              area   202.873
+            length   72.274
+
+          at point  X=   41.110  Y=   70.718  Z=    0.000
+          at point  X=   62.419  Y=   35.921  Z=    0.000
+             bulge    -0.134
+            center  X=   12.277  Y=    4.422  Z=    0.000
+            radius    59.215
+       start angle        75
+         end angle        45
+          at point  X=   71.467  Y=    6.164  Z=    0.000
+
+                  HATCH     Layer: "Hatch (Executive Towns)"
+                            Space: Model space
+                   Handle = 1d4148
+                 Hatch pattern SOLID
+                 Not associative
+                 Area      2000.596
+                 Origin    X=    0.000  Y=    0.000  Z=    0.000

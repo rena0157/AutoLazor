@@ -3,6 +3,8 @@ using Xunit;
 using Xunit.Abstractions;
 using AutoLazer.Core;
 using System.Collections.Generic;
+using System.Collections;
+using System.IO;
 
 namespace AutoLazer.Core.Tests
 {
@@ -56,6 +58,11 @@ namespace AutoLazer.Core.Tests
         /// <param name="inputText">The input text to be tests</param>
         /// <param name="pattern">The pattern for the regex</param>
         /// <param name="expected">The expected text </param>
+        /// <remarks>
+        /// Test 1: text with lowercase t
+        /// Test 2: test with uppercase T
+        /// Test 3: Contents for Mtext test
+        /// </remarks>
         [Theory]
         [InlineData("text Block 1", AutoListPatterns.TextPattern, new string[]{"Block 1"})]
         [InlineData("Text Block 1", AutoListPatterns.TextPattern, new string[]{"Block 1"})]
@@ -63,5 +70,32 @@ namespace AutoLazer.Core.Tests
         public void GetObjectsTestString(string inputText, string pattern, string[] expected) =>
             Assert.Equal(expected, AutoListParser
                 .GetObjects<string>(inputText, pattern));
+
+
+        /// <summary>
+        /// Class that encapsulates all of the data for the GetBlocks Test
+        /// </summary>
+        public class GetBlocksTestData : IEnumerable<object[]>
+        {
+            public IEnumerator<object[]> GetEnumerator()
+            {
+                yield return new object[] {File.ReadAllText("TestFiles/GetBlocksTestData_Test1.txt"),
+                    new List<Block> {
+                            new Block("BLOCK   215\r", 101.633, 137.608),
+                            new Block("BLOCK   214\r", 70.807, 2741.476),
+                            new Block("BLOCK   216\r", 72.274, 81.438)
+                        }};
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
+        }
+
+        [Theory]
+        [ClassData(typeof(GetBlocksTestData))]
+        public void GetBlocksTest(string inputText, List<Block> expectedList) =>
+            Assert.Equal(expectedList, AutoListParser.GetBlocks(inputText));
     }
 }
