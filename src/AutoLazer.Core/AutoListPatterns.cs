@@ -4,10 +4,10 @@ namespace AutoLazer.Core
 {
     public class AutoListPatterns
     {
-        public static readonly string LinesLengthPattern = @"[L,l]ength\s+=?\s*(?<double>\d+\.?\d*)";
+        public const string LinesLengthPattern = @"[L,l]ength\s+=?\s*(?<target>\d+\.?\d*)";
 
-        public static readonly string HatchAreaPattern = @"[A,a]rea\s*(?<double>\d+\.?\d*)";
+        public const string HatchAreaPattern = @"[A,a]rea\s*(?<target>\d+\.?\d*)";
 
-        public static readonly string TextPattern = @"(text|Contents:)\s*(?<string>.*)";
+        public const string TextPattern = @"([T,t]ext|Contents:)\s*(?<target>.*)";
     }
 }
