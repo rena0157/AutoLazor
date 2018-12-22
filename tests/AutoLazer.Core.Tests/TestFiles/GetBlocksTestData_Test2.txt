@@ -1,6 +1,12 @@
 LIST
 Select objects: 1 found
 
+Select objects: *Cancel*
+
+Command:  LIST
+
+Select objects: 1 found
+
 Select objects: 1 found, 2 total
 
 Select objects: 1 found, 3 total
@@ -14,8 +20,6 @@ Select objects: 1 found, 6 total
 Select objects: 1 found, 7 total
 
 Select objects: 1 found, 8 total
-
-Select objects: 1 found, 9 total
 
 Select objects:
                   TEXT      Layer: "Block Numbers"
@@ -88,14 +92,6 @@ Press ENTER to continue:
        start angle        75
          end angle        45
           at point  X=   71.467  Y=    6.164  Z=    0.000
-
-                  HATCH     Layer: "Hatch (Executive Towns)"
-                            Space: Model space
-                   Handle = 1d4148
-                 Hatch pattern SOLID
-                 Not associative
-                 Area      2000.596
-                 Origin    X=    0.000  Y=    0.000  Z=    0.000
 
                   TEXT      Layer: "Block Numbers"
                             Space: Model space

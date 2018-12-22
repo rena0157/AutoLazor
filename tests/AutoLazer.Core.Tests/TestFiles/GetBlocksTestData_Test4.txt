@@ -17,6 +17,8 @@ Select objects: 1 found, 8 total
 
 Select objects: 1 found, 9 total
 
+Select objects: 1 found, 10 total
+
 Select objects:
                   TEXT      Layer: "Block Numbers"
                             Space: Model space
@@ -32,22 +34,22 @@ Select objects:
          obliquing angle      0
         generation normal
 
-                  LWPOLYLINE  Layer: "Frontage"
+                  LINE      Layer: "Blocklines"
                             Space: Model space
-                   Handle = 1ee971
-              Open
-    Constant width     0.000
-              area   81.438
-            length   70.807
+                   Handle = 2098a9
+              from point, X=  -13.865  Y=   66.933  Z=    0.000
+                to point, X=  -50.294  Y=   74.319  Z=    0.000
+          Length =   37.170,  Angle in XY Plane =    169
+                  Delta X =  -36.429, Delta Y =     7.386, Delta Z =    0.000
 
-          at point  X=  -50.294  Y=   74.319  Z=    0.000
-          at point  X=  -13.865  Y=   66.933  Z=    0.000
-             bulge     0.042
-            center  X=   21.660  Y=  262.875  Z=    0.000
-            radius   199.137
-       start angle       303
-         end angle       312
-          at point  X=   19.581  Y=   63.749  Z=    0.000
+                  ARC       Layer: "Blocklines"
+                            Space: Model space
+                   Handle = 2098a8
+            center point, X=   21.670  Y=  263.062  Z=    0.000
+            radius   199.324
+             start angle    260
+               end angle    269
+            length    33.508
 
                   HATCH     Layer: "Hatch (Executive Towns)"
                             Space: Model space
@@ -78,8 +80,8 @@ Select objects:
     Constant width     0.000
               area   202.873
             length   72.274
-
 Press ENTER to continue:
+
           at point  X=   41.110  Y=   70.718  Z=    0.000
           at point  X=   62.419  Y=   35.921  Z=    0.000
              bulge    -0.134
