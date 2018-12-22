@@ -1,3 +1,5 @@
+using System;
+
 namespace AutoLazer.Core
 {
     /// <summary>
@@ -36,11 +38,11 @@ namespace AutoLazer.Core
 
         public override bool Equals(object obj)
         {
-            if ((obj == null) || this.GetType().Equals(obj.GetType()))
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
                 return false;
-                
+
             Block block = (Block) obj;
-            return (block.Id == this.Id) && (block.Frontage == this.Frontage) && (block.Area == this.Area);
+            return (block.Id.Equals(block.Id, StringComparison.CurrentCulture)) && (block.Frontage == this.Frontage) && (block.Area == this.Area);
         }
     }
 }
