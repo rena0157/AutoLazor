@@ -3,6 +3,6 @@ WORKDIR /app
 
 COPY ./ ./
 
-RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Release -o /out
 
-ENTRYPOINT [ "dotnet", "out/AutoLazor.Server.dll" ]
+ENTRYPOINT [ "dotnet", "/out/AutoLazor.Server.dll" ]
