@@ -1,6 +1,6 @@
 # Quick Script to run the dotnet watch command for the server project
 
-Write-Output "Running the Server Project"
+Write-Output "Building the Server Project"
 
 # Variables
 $SolutionDir = "C:\Dev\AutoLazer"
