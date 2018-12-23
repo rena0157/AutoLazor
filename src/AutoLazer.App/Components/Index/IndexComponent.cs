@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoLazer.Core;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace AutoLazer.App
 {
@@ -17,6 +18,9 @@ namespace AutoLazer.App
         private double _totalLength = 0.0;
         private double _totalArea = 0.0;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public IndexComponent()
         {
             Blocks = new List<Block>();
@@ -75,6 +79,17 @@ namespace AutoLazer.App
                 .Sum() / 10000;
 
             Blocks = AutoListParser.GetBlocks(InputText);
+        }
+
+        /// <summary>
+        /// Use the FileUtils service to download the file
+        /// </summary>
+        /// <param name="e">Mouse Event args</param>
+        public void DownloadFile(UIMouseEventArgs e)
+        {
+            FileUtils.SaveFile("Blocks.csv",Encoding.UTF8
+                .GetBytes(AutoListParser.BlocksToCsv(Blocks))
+                .ToArray());
         }
     }
 }
