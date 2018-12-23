@@ -8,6 +8,6 @@ namespace AutoLazer.Core
 
         public const string HatchAreaPattern = @"[A]rea\s*(?<target>\d+\.?\d*)";
 
-        public const string TextPattern = @"([T,t]ext|Contents:)\s*(?<target>.*)";
+        public const string TextPattern = @"(text|Contents:)\s*(?<target>.*)";
     }
 }
