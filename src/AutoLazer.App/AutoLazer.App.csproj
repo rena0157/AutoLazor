@@ -15,7 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Watch Include="**\*.cshtml"/>
+    <Watch Include="**\*.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutoLazer.Core\AutoLazer.Core.csproj" />
   </ItemGroup>
 
 

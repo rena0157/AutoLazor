@@ -51,14 +51,16 @@ namespace AutoLazer.Core
                 var currentMatch = matches[matchIndex];
 
                 // Get the initial block ID
-                if ( currentText == null && ( currentMatch.Value == "TEXT" || currentMatch.Value == "MTEXT" ) )
+                if ( textIndex < textObjects.Count && currentText == null 
+                    && ( currentMatch.Value == "TEXT" || currentMatch.Value == "MTEXT" ) )
                 {
                     currentText = textObjects[textIndex++];
                     continue;
                 }
 
                 // Add length of a line and polyline to the total length
-                if ( currentMatch.Value == "LWPOLYLINE" || currentMatch.Value == "LINE" ||currentMatch.Value == "ARC")
+                if ( lineIndex < lengths.Count 
+                    && (currentMatch.Value == "LWPOLYLINE" || currentMatch.Value == "LINE" ||currentMatch.Value == "ARC"))
                 {
                     currentLength += lengths[lineIndex++];
                     continue;
@@ -66,14 +68,15 @@ namespace AutoLazer.Core
 
                 // If the current item is a hatch then add the area of the hatch
                 // to the list
-                if ( currentMatch.Value == "HATCH" )
+                if ( areaIndex < areas.Count && currentMatch.Value == "HATCH" )
                 {
                     currentArea += areas[areaIndex++];
                     continue;
                 }
 
                 // Build the block and place it into the list
-                if ( currentText != null && ( currentMatch.Value == "TEXT" || currentMatch.Value == "MTEXT" ) )
+                if ( textIndex < textObjects.Count 
+                    && currentText != null && ( currentMatch.Value == "TEXT" || currentMatch.Value == "MTEXT" ) )
                 {
                     blocks.Add(new Block(currentText, currentLength, currentArea));
                     currentText = textObjects[textIndex++];

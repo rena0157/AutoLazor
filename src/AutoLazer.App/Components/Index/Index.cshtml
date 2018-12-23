@@ -10,11 +10,40 @@
     <!-- Main text input area -->
     <textarea class="autolist-textarea" 
         id="input-area" placeholder="Enter text here..." 
-        style="grid-area: input" onkeyup="@InputAreaOnKeyUp"></textarea>
+        style="grid-area: input" oninput="@InputAreaOnKeyUp"></textarea>
 
     <!-- Length output area -->
-    <textarea class="autolist-textarea" id="length-output" placeholder="Total Length" style="grid-area: length-output"></textarea>
+    <textarea class="autolist-textarea" 
+        id="length-output" readonly
+        style="grid-area: length-output">@TotalLength</textarea>
 
     <!-- Area output area -->
-    <textarea class="autolist-textarea" id="area-output" placeholder="Total Area" style="grid-area: area-output"></textarea>
+    <textarea class="autolist-textarea"
+        id="area-output" readonly
+        style="grid-area: area-output">@TotalArea</textarea>
+
+    @if (Blocks.Count > 0)
+    {
+        <table class="table table-hover table-striped" style="grid-area: block-table">
+            <thead>
+                <tr>
+                    <th>Block ID</th>
+                    <th>Frontage (@LinearUnit)</th>
+                    <th>Area</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var block in Blocks)
+                {
+                    <tr>
+                        <td>@block.Id</td>
+                        <td>@block.Frontage</td>
+                        <td>@block.Area</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+
 </div>

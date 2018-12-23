@@ -17,6 +17,7 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     box-sizing: border-box;
+    margin-bottom: 200px;
 }
 
 a {
@@ -52,14 +53,15 @@ a {
 /* The index component container */
 .index-container {
     display: grid;
-    grid-template-rows: auto auto 2em;
+    grid-template-rows: auto auto 2em auto;
     grid-template-columns: 2fr 2fr 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
     grid-template-areas: 
         "message message message"
         "input input input"
-        "length-output area-output .";
+        "length-output area-output ."
+        "block-table block-table block-table";
 }
 
 /* The standard look and feel for the autolist textarea */
@@ -77,6 +79,23 @@ a {
 .autolist-textarea:focus {
     border: 1px solid blue;
     box-shadow: 1px 1px 5px 2px #8f8f8f;
+}
+
+.table {
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+.table th {
+    background-color: #e0e0e0;
+}
+
+.table tr, th, td {
+    border: 1px solid black;
+    padding: 0.1em 0.2em 0.1em 0.2em;
+    text-align: center;
 }
 
 /* Specific styles for the autolist-input area textarea */
