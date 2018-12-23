@@ -1,8 +1,13 @@
-FROM microsoft/dotnet:2.1-sdk
+FROM microsoft/dotnet:2.1-sdk as build-env
 WORKDIR /app
 
-COPY ./ ./
+COPY ./src/ ./
 
-RUN dotnet publish -c Release -o /app/out
+RUN dotnet publish AutoLazer.Server/ -c Release -o ./out
 
-ENTRYPOINT [ "dotnet", "/out/AutoLazor.Server.dll" ]
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+WORKDIR /app
+
+COPY --from=build-env /app/AutoLazer.Server/out .
+
+ENTRYPOINT [ "dotnet", "AutoLazor.Server.dll" ]
