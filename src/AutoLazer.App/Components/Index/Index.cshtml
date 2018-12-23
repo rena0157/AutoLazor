@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inherits IndexComponent
 
+<!-- Message Container -->
 <div class="index-container">
     <div style="grid-area: message">
         <h3>AutoLazer</h3>
@@ -22,8 +23,15 @@
         id="area-output" readonly
         style="grid-area: area-output">@TotalArea</textarea>
 
+    <!-- Block table and download button only visable if the number of blocks is greater than 0 -->
     @if (Blocks.Count > 0)
     {
+        <!-- Download button -->
+        <button class="download-button" style="grid-area: download-button" onclick="@DownloadFile">
+            Download Blocks
+        </button>
+
+        <!-- Block table -->
         <table class="table table-hover table-striped" style="grid-area: block-table">
             <thead>
                 <tr>
@@ -37,8 +45,8 @@
                 {
                     <tr>
                         <td>@block.Id</td>
-                        <td>@block.Frontage</td>
-                        <td>@block.Area</td>
+                        <td>@(block.Frontage) @(LinearUnit)</td>
+                        <td>@(block.Area) @(AreaUnit)</td>
                     </tr>
                 }
             </tbody>
