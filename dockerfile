@@ -10,4 +10,4 @@ WORKDIR /app
 
 COPY --from=build-env /app/AutoLazer.Server/out .
 
-ENTRYPOINT [ "dotnet", "AutoLazor.Server.dll" ]
+ENTRYPOINT [ "dotnet", "AutoLazer.Server.dll" ]
