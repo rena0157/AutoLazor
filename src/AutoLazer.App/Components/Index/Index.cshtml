@@ -4,8 +4,19 @@
 <!-- Message Container -->
 <div class="index-container">
     <div style="grid-area: message">
-        <h3>AutoLazer</h3>
-        <p>AutoLazer is the AutoList tools built in a completely new framework called <b>Blazor</b></p>
+        <h2>AutoLazer</h2>
+        <p>AutoLazer is a tool that can be used to extract data from the AutoCAD List Command.</p>
+        <h4>Usage Notes</h4>
+        <p>
+            Objects should be selected using the <code>LIST</code> command with each object having an ID. This 
+            ID can either be an <code>MTEXT</code> object or a regular <code>TEXT</code> object. 
+        </p>
+        <p>
+            The program recongizes currently three objects other than <code>TEXT</code> and <code>MTEXT</code>, which are 
+            the <code>LINE</code>, <code>LWPOLYLINE</code> and <code>HATCH</code>. Length information will be extracted
+            from lines and area information will be extracted form hatches.
+        </p>
+        <h4>Enter text below:</h4>
     </div>
 
     <!-- Main text input area -->
